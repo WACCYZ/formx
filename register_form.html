@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>formx-1.0.js</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+
+<body>
+
+<form action="json/res.json" method="post" id="myform">
+	<div class="ele">
+		<h4>手机号码</h4>
+		<div class="ele-bd">
+			<input type="text" name="tel" maxlength="11" pattern="^\d{11}$" required>
+			<div class="status">
+				<span class="yes">验证成功</span>
+				<span class="no">验证失败</span>
+			</div>
+			<div class="tip">请输入手机号码</div>
+		</div>
+	</div>
+	<div class="ele">
+		<h4>用户密码</h4>
+		<div class="ele-bd">
+			<input type="password" name="pass" data-group="u-pass" maxlength="20" pattern="^([a-zA-Z\d_\-]){6,}$" required>
+			<div class="status">
+				<span class="yes">验证成功</span>
+				<span class="no">验证失败</span>
+			</div>
+			<div class="tip">请输入密码</div>
+		</div>
+	</div>
+	<div class="ele">
+		<h4>重复密码</h4>
+		<div class="ele-bd">
+			<input type="password" name="repass" data-group="u-pass" maxlength="20" pattern="^([a-zA-Z\d_\-]){6,}$" required>
+			<div class="status">
+				<span class="yes">验证成功</span>
+				<span class="no">验证失败</span>
+			</div>
+			<div class="tip">请输入密码</div>
+		</div>
+	</div>
+
+	<div class="ele ele-btn">
+		<input type="submit" value="登 录" class="btn" />
+	</divv>
+</form>
+
+
+
+<script src="js/jquery1.8.min.js"></script>
+<script src="js/formx-1.0.min.js"></script>
+<script>
+	$('#myform').formx({
+		errEle : '.ele-bd',
+		errClass : 'error',
+		okClass : 'success'
+	});
+</script>
+
+</body>
+</html>
