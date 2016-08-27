@@ -1,6 +1,10 @@
 # formx
 jQuery表单验证插件
 
+# 大家最喜欢看demo
+* [简单的登录验证](http://htmlpreview.github.io/?https://github.com/imsole/formx/blob/master/login_form.html)
+* [注册验证](http://htmlpreview.github.io/?https://github.com/imsole/formx/blob/master/register_form.html)
+
 #html elements config options
 * required - 是否验证
 * pattern - 验证规则，正则表达式，写法：^[\w\-]{3,}$
