@@ -1,0 +1,71 @@
+/**
+ * @Author:		sole
+ * @DateTime:	2016-08-27 14:21:20
+ * @Description:common.css
+ */
+/* basic */
+body,iframe,div,p,h1,h2,h3,h4,h5,h6,fieldset,ul,ol,dl,dt,dd,form,input,button,textarea,select,i{ margin:0px; padding:0px; font-weight:normal; }
+article,aside,header,section,footer,nav,figure,menu{ display:block; }
+body,input,button,select,textarea {font: 12px/1.5 'Hiragino Sans GB','Helvetica Neue','\5FAE\8F6F\96C5\9ED1','Tohoma';}
+input,button,select,textarea { outline:none; cursor:text; }
+select, input {/* cursor:default; */}
+input[type='text'],input[type='password'] { cursor:text; }
+textarea { resize:none }
+input { width:auto; overflow:visible; }
+input::-ms-clear,input::-webkit-search-cancel-button { display: none; }
+ul { list-style:none; overflow:hidden; }
+ol { padding-left:20px; }
+i,em,u { font-style:normal; }
+a { color:#666; text-decoration:none; }
+a:visited { }
+a:hover { color:#08c; text-decoration:underline; }
+a:active { color:#999; }
+img { border:0 none; vertical-align:middle; }
+.clear, .layout { *zoom:1; }
+.clear:after, .layout:after { display:table; clear:both; content:""; }
+::selection { background: #08c; color:#fff; }
+
+@font-face {
+	font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.icon, i{display:inline-block;width:18px;height:18px;margin-top:-2px;line-height:1;font-family:"iconfont";font-size:22px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.1px;vertical-align: middle;text-align: center;}
+
+/*layout_basic*/
+.layout {width: 800px;margin:0px auto;color:#666;}
+.fl { float:left; }
+.fr { float:right; }
+.mt15 { margin-top:15px; }
+.mt20 { margin-top:20px; }
+.hide { display: none; visibility: hidden; }
+.show { display: block; visibility: visible; }
+.fixed { position: fixed; top:0; z-index: 100; }
+.H { color: #f36; }
+.success 
+.error .no:before { content: "\e658"; }
+
+form { width:300px; margin: 10% auto; }
+form input { width:100%; height:24px; padding:4px 8px; border:1px solid #aaa; border-radius:2px; box-shadow:1px 1px 1px rgba(0,0,0,.2) inset; box-sizing: content-box; }
+form input:focus { border:1px solid #08c; box-shadow:0 0 5px #08c, 1px 1px 1px rgba(0,0,0,.2) inset; }
+form .tip, form .status { padding:5px 0; }
+form .tip { color:#999; }
+form .ele { margin:15px; }
+form h4 { font-size: 14px; margin-bottom:5px; }
+form .status span { display: none; }
+form .status span:before { font-family: 'iconfont'; font-size: 18px; vertical-align: middle; }
+form .status .yes { color:#094; }
+form .status .no { color:#d32; }
+form .status .yes:before { content: "\e656"; }
+form .status .no:before { content: "\e658"; }
+form .success .yes, form .error .no { display: block; }
+form .error input { border-color:#d32; }
+form .error input:focus { box-shadow:0 0 5px #d32;  }
+form input[type=submit] { height:30px; background: #094; color:#fff; border:0 none; box-shadow: none; cursor: pointer; }
+form input[type=submit]:active,form input[type=submit]:focus { box-shadow: none; border:0 none; }
+form input[type=submit]:active {  box-shadow:1px 1px 3px rgba(0,0,0,.2) inset; }
+form input[disabled] { background: #999; cursor: not-allowed; }
