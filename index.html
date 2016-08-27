@@ -31,6 +31,74 @@
 </ul>
 
 <h1>
+<a id="html-elements-config-options" class="anchor" href="#html-elements-config-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>html elements config options</h1>
+
+<ul>
+<li>required - 是否验证</li>
+<li>pattern - 验证规则，正则表达式，写法：^[\w-]{3,}$</li>
+<li>data-group - 验证组，双向验证，常用地方：密码验证，data-group的值要一样</li>
+<li>data-url - 远程验证地址，失去焦点后会自动验证</li>
+</ul>
+
+<h1>
+<a id="formx-config-options" class="anchor" href="#formx-config-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>formx config options</h1>
+
+<ul>
+<li>errClass - string - 验证失败的class</li>
+<li>okClass - string - 验证通过的class</li>
+<li>errElem - string - 验证失败添加错误class的元素，默认父级，如果指定了元素，那么默认查找parents('errElem');</li>
+<li>regexped - fn - 正则验证完成后执行的回调函数，返回参数：当前验证对象</li>
+<li>urled - fn - 远程验证完成后指向的回调函数，返回参数：当前验证对象，服务器返回的结果</li>
+<li>eleClick - fn - 元素点击事件，返回参数：当前元素对象</li>
+<li>docClick - fn - document点击事件，返回参数：当前点击元素对象</li>
+<li>saved - fn - 保存成功之后要的回调函数，返回参数：服务器数据</li>
+<li>mouseover - fn - 在表单上移动的时候执行的函数，返回参数：当前表单所有数据，json格式</li>
+<li>keyup - fn - 键盘抬起后执行</li>
+<li>saveBefore - fn - 在提交之前要处理数据的函数</li>
+</ul>
+
+<h1>
+<a id="form-simple-use" class="anchor" href="#form-simple-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>form simple use</h1>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#form<span class="pl-pds">'</span></span>).<span class="pl-en">formx</span>();</pre></div>
+
+<h1>
+<a id="html-element-demo" class="anchor" href="#html-element-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>html element demo</h1>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> <span class="pl-e">method</span><span class="pl-s"><span class="pl-pds">"</span>post<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myform<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">label</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>label<span class="pl-pds">"</span></span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>birthday<span class="pl-pds">"</span></span>&gt;出生日期：&lt;/<span class="pl-ent">label</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>ele-bd<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>birthday<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>birthday<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>place write birthday<span class="pl-pds">"</span></span> <span class="pl-e">pattern</span>=<span class="pl-s"><span class="pl-pds">"</span>^1\d{3}((\-)?\d{1,2)){2}$<span class="pl-pds">"</span></span> <span class="pl-e">required</span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>status<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>error<span class="pl-pds">"</span></span>&gt;验证失败&lt;/<span class="pl-ent">span</span>&gt;
+            &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>success<span class="pl-pds">"</span></span>&gt;验证成功&lt;/<span class="pl-ent">span</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">form</span>&gt;</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#myform<span class="pl-pds">'</span></span>).<span class="pl-en">formx</span>({
+    errEle <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ele-bd<span class="pl-pds">'</span></span>,
+    errClass <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>err<span class="pl-pds">'</span></span>,
+    okClass <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>success<span class="pl-pds">'</span></span>,
+    <span class="pl-en">saved</span> <span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">res</span>){
+        <span class="pl-k">if</span>( <span class="pl-smi">res</span>.<span class="pl-c1">code</span> <span class="pl-k">==</span> <span class="pl-c1">1</span> ){
+            <span class="pl-en">console</span>.<span class="pl-c1">log</span>( res );
+        }<span class="pl-k">else</span>{
+            <span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">res</span>.<span class="pl-smi">msg</span> );
+        }
+    }
+  });</pre></div>
+
+<h1>
+<a id="建议返回res" class="anchor" href="#%E5%BB%BA%E8%AE%AE%E8%BF%94%E5%9B%9Eres" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>建议返回res</h1>
+
+<div class="highlight highlight-source-js"><pre>{
+    code <span class="pl-k">:</span> <span class="pl-c1">1</span>,  
+    msg <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>操作成功<span class="pl-pds">'</span></span>,  
+    data <span class="pl-k">:</span> {}  
+}</pre></div>
+
+<h1>
 <a id="遵循协议" class="anchor" href="#%E9%81%B5%E5%BE%AA%E5%8D%8F%E8%AE%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>遵循协议</h1>
 
 <p>额，其实这个协议只是拿来唬人了，当然也是为了装逼，所以说只有装逼的人才会写一大堆IT小白不懂的协议名称【ps：如果懂很多协议也是好事呀，说明你够细心呀，但是在工作中，这些都没什么卵用；俗话说：老板吼一吼，员工抖三抖，在老板看来，听话、出活，才是好员工，没有成果，分分钟滚蛋】。<br>
