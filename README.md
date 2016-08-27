@@ -21,37 +21,44 @@ jQuery表单验证插件
 * saveBefore - fn - 在提交之前要处理数据的函数
 
 #form simple use
+```javascript
 $('#form').formx();
+```
 
 #html element demo
+```html
 <form action="/" method"post" id="myform">
-  <label class="label" for="birthday">出生日期：</label>
-  <div class="ele-bd">
-    <input type="text" name="birthday" id="birthday" placeholder="place write birthday" pattern="^1\d{3}((\-)?\d{1,2)){2}$" required>
-    <div class="status">
-      <span class="error">验证失败</span>
-      <span class="success">验证成功</span>
-    </div>
-  </div>
+  	<label class="label" for="birthday">出生日期：</label>
+  	<div class="ele-bd">
+    	<input type="text" name="birthday" id="birthday" placeholder="place write birthday" pattern="^1\d{3}((\-)?\d{1,2)){2}$" required>
+    	<div class="status">
+      		<span class="error">验证失败</span>
+      		<span class="success">验证成功</span>
+    	</div>
+  	</div>
 </form>
-<script>
-  $('#myform').formx({
+```
+
+```javascript
+$('#myform').formx({
     errEle : 'ele-bd',
     errClass : 'err',
     okClass : 'success',
     saved : function(res){
-      if( res.code == 1 ){
-        console.log( res );
-      }else{
-        console.log( res.msg );
-      }
+      	if( res.code == 1 ){
+        	console.log( res );
+      	}else{
+        	console.log( res.msg );
+      	}
     }
   });
-</script>
+```
 
 #建议返回res
+```javascript
 {
-  code : 1,
-  msg : '操作成功',
-  data : {}
+	code : 1,  
+	msg : '操作成功',  
+	data : {}  
 }
+```
