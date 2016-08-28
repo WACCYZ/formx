@@ -48,7 +48,7 @@ $('#form').formx();
 
 ```javascript
 $('#myform').formx({
-    errEle : 'ele-bd',
+    errElem : 'ele-bd',
     errClass : 'err',
     okClass : 'success',
     saved : function(res){
