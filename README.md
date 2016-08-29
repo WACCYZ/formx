@@ -5,6 +5,7 @@ formx是一款html5+jQuery的表单验证插件，相对于jquery validate插件
 * 调用插件的时候配置参数
 
 # 大家最喜欢看demo
+* 如果打开页面是错乱的，那么稍等一会就好了
 * [简单的登录验证](http://htmlpreview.github.io/?https://github.com/imsole/formx/blob/master/login_form.html)
 * [注册验证](http://htmlpreview.github.io/?https://github.com/imsole/formx/blob/master/register_form.html)
 
