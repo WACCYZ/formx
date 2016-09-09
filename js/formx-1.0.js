@@ -76,6 +76,7 @@
 			function setSaveBtn(){
 				var arr = [];
 				var iErr = oForm.find('.'+opt.errClass).length;
+				oRequired = oForm.find('input[required], textarea[required]');
 				data = oForm.getForm();
 				oRequired.each(function(i, ele){
 					if( $.trim(data[ $(ele).attr('name') ]) ){
